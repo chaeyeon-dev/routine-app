@@ -1,16 +1,26 @@
-# React + Vite
+# 🌱 Routine App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+루틴을 완료하며 식물을 키우는 습관 관리 앱입니다.
 
-Currently, two official plugins are available:
+## 소개
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+매일 루틴을 완료하면 경험치를 얻고, 식물이 성장합니다.
+꾸준히 루틴을 지키면 씨앗에서 큰 나무로 진화하는 과정을 통해 동기부여를 얻을 수 있어요.
 
-## React Compiler
+### 진화 단계
+🌰 씨앗 → 🌱 새싹 → 🌿 어린나무 → 🌳 큰나무
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 기술 스택
 
-## Expanding the ESLint configuration
+- React 19
+- Vite
+- Lucide React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 시작하기
+
+```bash
+npm install
+npm run dev
+```
+
+브라우저에서 `http://localhost:5173` 으로 접속하세요.
