@@ -525,15 +525,12 @@ function HomeScreen({ exp, setExp, stage, nextStage, setTab, todos, setTodos, da
       )}
 
       {/* 헤더 */}
-      <div style={{ padding: "22px 20px 0", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 16 }}>
-        <div>
-          <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: "-0.3px", color: "#1a1a1a" }}>할 일</h1>
-          <p style={{ fontSize: 13, color: "#aaa", margin: "3px 0 0" }}>
-            {isSelectedToday
-              ? total === 0 ? "오늘 할 일을 추가해보세요" : `오늘 ${done}/${total}개 완료`
-              : `${selectedDateObj.getMonth() + 1}월 ${selectedDateObj.getDate()}일 기록`}
-          </p>
-        </div>
+      <div style={{ padding: "22px 20px 0", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+        <p style={{ fontSize: 13, color: "#aaa", margin: 0 }}>
+          {isSelectedToday
+            ? total === 0 ? "오늘 할 일을 추가해보세요" : `오늘 ${done}/${total}개 완료`
+            : `${selectedDateObj.getMonth() + 1}월 ${selectedDateObj.getDate()}일 기록`}
+        </p>
         <div onClick={openCalendar} style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 3, padding: "6px 10px", background: "#fff", borderRadius: 10, boxShadow: "0 1px 4px rgba(0,0,0,0.08)" }}>
           <span style={{ fontSize: 12, fontWeight: 600, color: "#555" }}>
             {selectedDateObj.getFullYear()}년 {selectedDateObj.getMonth() + 1}월
@@ -1178,16 +1175,13 @@ function RoutineGridScreen({ exp, setExp, routines, setRoutines }) {
 
       {/* 헤더 */}
       <div style={{ padding: "22px 20px 0", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-        <div>
-          <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: "-0.3px", color: "#1a1a1a" }}>루틴</h1>
-          <p style={{ fontSize: 13, color: "#aaa", margin: "3px 0 0" }}>
-            오늘 {totalCompleted}/{totalRoutines} 완료
-          </p>
-        </div>
+        <p style={{ fontSize: 13, color: "#aaa", margin: 0 }}>
+          오늘 {totalCompleted}/{totalRoutines} 완료
+        </p>
         <button onClick={openAdd} style={{
           display: "flex", alignItems: "center", gap: 6,
           padding: "8px 14px", borderRadius: 10, border: "none",
-          background: GREEN, color: "#fff",
+          background: "#1a1a1a", color: "#fff",
           fontSize: 13, fontWeight: 600, cursor: "pointer",
         }}>
           <Plus size={14} strokeWidth={2.5} /> 추가
@@ -1284,14 +1278,6 @@ function RoutineGridScreen({ exp, setExp, routines, setRoutines }) {
                 </span>
               </div>
 
-              <div style={{ display: "flex", gap: 5, marginTop: 10 }}>
-                {r.history.map((done, i) => (
-                  <div key={i} style={{
-                    width: 6, height: 6, borderRadius: "50%",
-                    background: done ? r.color : "#EBEBEB",
-                  }} />
-                ))}
-              </div>
             </div>
           );
         })}
@@ -1437,17 +1423,8 @@ function RecordScreen({ photos, setPhotos, diaries, setDiaries }) {
 
   return (
     <div style={{ background: "#F2F2F7", minHeight: "100vh", paddingBottom: 20 }}>
-      <div style={{ padding: "22px 20px 0", marginBottom: 16 }}>
-        <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: "-0.3px", color: "#1a1a1a" }}>
-          기록
-        </h1>
-        <p style={{ fontSize: 13, color: "#aaa", margin: "3px 0 0" }}>
-          인증샷과 하루 회고를 남겨보세요
-        </p>
-      </div>
-
       {/* 세그먼트 */}
-      <div style={{ padding: "0 20px", marginBottom: 16 }}>
+      <div style={{ padding: "22px 20px 0", marginBottom: 16 }}>
         <div style={{ display: "flex", background: "#EBEBEB", borderRadius: 10, padding: 3 }}>
           {[["photos", "인증샷"], ["diary", "회고"]].map(([key, label]) => (
             <button
@@ -2123,8 +2100,7 @@ function ProfileScreen({ exp, stage, routines, photos, diaries, dailyRecords, pr
   ];
 
   return (
-    <div style={{ padding: "32px 20px 20px", background: "#F2F2F7", minHeight: "100%" }}>
-      <h1 style={{ fontSize: 22, fontWeight: 800, margin: "0 0 20px" }}>마이</h1>
+    <div style={{ padding: "22px 20px 20px", background: "#F2F2F7", minHeight: "100%" }}>
 
       {/* 프로필 카드 */}
       <div style={{
@@ -2377,10 +2353,6 @@ function FocusScreen({ exp, setExp }) {
       minHeight: "100%",
       background: "#F2F2F7",
     }}>
-      <h1 style={{ fontSize: 22, fontWeight: 800, margin: 0, marginBottom: 24, alignSelf: "flex-start" }}>
-        집중
-      </h1>
-
       {/* 모드 토글 */}
       <div style={{
         display: "flex", background: "#E5E5EA", borderRadius: 12, padding: 4, gap: 4,
