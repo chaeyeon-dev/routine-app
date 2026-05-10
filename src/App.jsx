@@ -2152,10 +2152,14 @@ function ProfileScreen({ exp, stage, routines, photos, diaries, dailyRecords, pr
           <p style={{ fontSize: 13, fontWeight: 700, margin: 0, color: "#1a1a1a" }}>이번 주</p>
           <span style={{ fontSize: 11, color: "#aaa", marginLeft: "auto" }}>평균 {weekAvg}%</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", height: 70, gap: 6, marginBottom: 14 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", height: 56, gap: 6, marginBottom: 4 }}>
           {weekData.map((d, i, arr) => (
-            <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-              <div style={{ width: "100%", height: `${Math.max(d.v, 4)}%`, background: i === arr.length - 1 ? "#1a1a1a" : "#E0E0E0", borderRadius: 4, minHeight: 4 }} />
+            <div key={i} style={{ flex: 1, height: `${Math.max(d.v * 0.56, 4)}px`, background: i === arr.length - 1 ? "#1a1a1a" : "#E0E0E0", borderRadius: 4 }} />
+          ))}
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: 6, marginBottom: 14 }}>
+          {weekData.map((d, i) => (
+            <div key={i} style={{ flex: 1, textAlign: "center" }}>
               <span style={{ fontSize: 9, color: "#aaa" }}>{d.day}</span>
             </div>
           ))}
